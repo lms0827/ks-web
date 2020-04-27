@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class AppApplication implements CommandLineRunner {
+
 	private final PersonRepository personRepository;
 
 	private final SocialMediaRepository socialMediaRepository;
@@ -17,7 +18,6 @@ public class AppApplication implements CommandLineRunner {
 	private final SkillRepository skillRepository;
 
 	private final WorkRepository workRepository;
-
 
 	public AppApplication(PersonRepository personRepository, SocialMediaRepository socialMediaRepository,
 						  InterestRepository interestRepository, SkillRepository skillRepository,
@@ -35,12 +35,12 @@ public class AppApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		personRepository.save(new Person("이민석", "데이터 분석", "hello@test.com", "010-1234-5678"));
-		socialMediaRepository.save(new SocialMedia("anymous","anymous"));
-		interestRepository.save(new Interests("영화보기"));
+		personRepository.save(new Person("이민석", "데이터 분석", "hello.test.com","010-1234-5678"));
+		socialMediaRepository.save(new SocialMedia("annymous","annymous"));
+		interestRepository.save(new Interests("유뷰브 시청"));
 		interestRepository.save(new Interests("요리하기"));
 		interestRepository.save(new Interests("게임"));
-		skillRepository.save(new skill("웹 프로그래밍",2));
-		workRepository.save(new work("신입사원","네이버","2개월","null"));
+		skillRepository.save(new skill("웹 프로그래밍",77));
+		workRepository.save(new work("3학년","경성대학교 소프트웨어학과","1학기","2020년1학기_6주차(과제#2)"));
 	}
 }

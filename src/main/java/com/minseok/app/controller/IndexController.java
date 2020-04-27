@@ -32,7 +32,7 @@ public class IndexController {
         this.workRepository = workRepository;
     }
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model){
         Person person = personRepository.findAll().stream().findFirst().orElse(null);
         model.addAttribute("person", person);
         SocialMedia socialMedia = socialMediaRepository.findAll().stream().findFirst().orElse(null);
